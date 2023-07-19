@@ -1,7 +1,7 @@
 .. index:: General Understanding
 
-Before You Begin
-================
+Introduction
+============
 
 The Nextron Security Center is intended to provide multi tenancy support
 to single ASGARD installations. It connects to the Analysis Cockpit and
@@ -30,6 +30,8 @@ their communication relationships.
 
 .. figure:: ../images/security_center_architecture.png
    :alt: Architecture of Security Center
+
+   `Architecture of Security Center <../_images/security_center_architecture.png>`_
 
 In the figure above, the Security Center – which consists of the Security
 Center Frontend and the Security Center Backend – is shown as a single

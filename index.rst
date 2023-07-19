@@ -19,7 +19,6 @@ how to install the required components, and how to use it.
    setup/index
    first_steps/index
    findings_assets_tenants/index
-   issues/index
 
 Index
 =====

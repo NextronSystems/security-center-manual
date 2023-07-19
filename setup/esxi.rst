@@ -3,9 +3,10 @@
 Create a new ESX VM and mount the ISO
 -------------------------------------
 
-.. note::
-   This step has to be done three times, we need one dedicated server for each component.
-   Please see :ref:`requirements/hardware:hardware requirements` for the hardware requirements.
+In this manual we are working with one server for both the
+Security Center Frontend as well as the Backend. You can however
+install the two services on two separate servers. If this is the case
+please install a second server.
 
 Create a new VM with your virtualization software. In this case, we will use VMWare ESX managed through a VMWare VCenter.
 

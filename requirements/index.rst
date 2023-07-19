@@ -11,7 +11,7 @@ other topics.
 .. toctree::
     :caption: Contents
 
-    general
+    introduction
     hardware
     network
     verify

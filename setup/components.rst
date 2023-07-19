@@ -1,128 +1,117 @@
 .. index:: Components
 
+Installing the Components
+=========================
+
+This chapter will explain how to install the Security Center components
+on your server(s). We recommend to start with the Backend, though the
+order in which you install your components is not important.
+
+Please keep in mind that you can install the Frontend and Backend on
+two separate servers. For simplicity, we chose to install both services
+on the same server.
+
+If you also plan on installing both services on one server, make sure to
+remove the lock file and create a new motd-file after you installed your
+first service (Frontend or Backend). You can do this with the following
+commands:
+
+.. code-block:: console
+
+   nextron@security-center:~$ sudo rm /var/lib/nextron/installer/done
+   nextron@security-center:~$ sudo touch /etc/update-motd.d/01-nextron-setup
+
+.. warning:: 
+   For the next steps internet connectivity is required.
+
 Installing the Security Center Backend
 --------------------------------------
 
-After the base installation of your servers is completed, we can install the specific software for the components.
-
-You can now choose the role you want to install (Broker, Gatekeeper or Lobby):
-
-.. figure:: ../images/broker_nextronInstaller.png
-   :alt: the nextronInstaller
-
-You can install the three [1]_ servers in any order, as we will configure them once they are all up and running.
-
-.. warning::
-   The Broker Network needs a minimum version of 2.14.0 of the ASGARD
-   Management Center. Please make sure you installed your Broker Network
-   license in your ASGARD Management Center.
-   If you still can't see the ``Broker Network`` tab in your
-   ``Asset Management``, restart the ``asgard2`` service in ``Settings``
-   > ``System`` > ``Services``.
-
-.. [1]
-   This number may vary. In this example we went with the minimum of one Broker, one Lobby and one Gatekeeper.
-
-Gatekeeper Installation
-^^^^^^^^^^^^^^^^^^^^^^^
-
-To install the Gatekeeper, run the following command on your newly installed system:
+After the base installation of your server is completed, we can install the
+backend application. To do this, connect to the server via SSH or use your
+hypervisor's web console, and run the following command:
 
 .. code-block:: console
-    
-    nextron@gatekeeper:~$ sudo nextronInstaller -seccenter-backend
 
-.. figure:: ../images/setup_gatekeeper1.png
-   :alt: Installing the Gatekeeper
+   nextron@security-center:~$ sudo nextronInstaller -seccenter-backend
+
+.. figure:: ../images/setup_sc-backend.png
+   :alt: Installing the Security Center Backend
 
 After the installation is done, you will see the following message:
 
-.. figure:: ../images/setup_gatekeeper2.png
-   :alt: Installing the Gatekeeper
+.. figure:: ../images/setup_sc-backend_done.png
+   :alt: Finished the Installation of Security Center Backend
 
 You can now check if the service was installed successfully. 
 
 .. code-block:: console
    
-   nextron@gatekeeper:~$ systemctl status asgard2-gatekeeper.service
+   nextron@gatekeeper:~$ systemctl status securitycenter-model.service
    
-You will see that the service is in a "**failed/exited**" state. This will
-change once we configured our ASGARD with the Gatekeeper.
+The status of the service should be ``active (running)``.
 
-To configure your Gatekeeper in the ASGARD Management Center, we
-will continue later in the chapter :ref:`administration/configuration:Gatekeeper Configuration`.
+Installing the Security Center Frontend
+---------------------------------------
 
-Lobby Installation
-^^^^^^^^^^^^^^^^^^
+After you have installed your Backend, we can install the frontend application.
+To do this, connect to the server via SSH or use your hypervisor's web console,
+and run the following command:
 
-To install the Lobby, run the following command on your newly installed system:
+.. code-block:: console
+
+   nextron@security-center:~$ sudo nextronInstaller -seccenter-frontend
+
+.. figure:: ../images/setup_sc-frontend.png
+   :alt: Installing the Security Center Backend
+
+After the installation is done, you will see the following message:
+
+.. figure:: ../images/setup_sc-frontend_done.png
+   :alt: Finished the Installation of Security Center Backend
+
+You can now check if the service was installed successfully. 
 
 .. code-block:: console
    
-   nextron@lobby:~$ sudo nextronInstaller -lobby
+   nextron@gatekeeper:~$ systemctl status securitycenter.service
 
-.. figure:: ../images/setup_lobby1.png
-   :alt: Installing the Lobby
+You will see that the service is in a ``failed/exited`` state. This will
+change once we configured our Frontend. To do this, we can copy the the configuration
+for our Backend into the directory of our Frontend.
 
-After a short while you will be prompted to enter a password for the
-``admin`` user. This is the user for the web interface of the Lobby.
-
-.. note:: 
-   The password has to be:
-      - A minimum of 12 characters long
-      - Contain at least one upper- and lowercase letter, one digit and one special character
-
-.. figure:: ../images/setup_lobby2.png
-   :alt: Installing the Lobby
-
-After the installation is finished, you will see the following message:
-
-.. figure:: ../images/setup_lobby3.png
-   :alt: Installing the Lobby
-
-You can check the service to see if everything is up and running.
+On a single system installation, run the following command:
 
 .. code-block:: console
-   
-   nextron@lobby:~$ systemctl status asgard-lobby.service
 
-.. figure:: ../images/setup_lobby4.png
-   :alt: Installing the Lobby
+   nextron@security-center:~$ sudo cp /etc/nextron/securitycenter-model/model.config /etc/nextron/securitycenter/model.config
+   nextron@security-center:~$ sudo chown securitycenter: /etc/nextron/securitycenter/model.config
 
-You can now navigate to the web interface of the lobby :samp:`https://<FQDN>:9443`.
-Please log into the Lobby with the user ``admin`` and the password you chose during the installation:
+On a multi system installation, you have to copy the model.config file
+from one server to another. You can use the built in tools of linux to
+accomplish this.
 
-.. figure:: ../images/setup_lobby5.png
-   :alt: Using the Lobby
-
-To configure your Lobby in the ASGARD Management Center,
-we will continue later in the chapter :ref:`administration/configuration:Lobby Configuration`.
-
-Broker Installation
-^^^^^^^^^^^^^^^^^^^
-
-To install a Broker, run the following command on your newly installed system
+After the file has been copied, make sure that the permissions are
+correctly set:
 
 .. code-block:: console
-   
-   nextron@broker:~$ sudo nextronInstaller -broker
 
-.. figure:: ../images/setup_broker1.png
-   :alt: Installing a Broker
+   nextron@security-center:~$ sudo ls -l /etc/nextron/securitycenter/model.config
+   -rw------- 1 securitycenter securitycenter 7587 Jul 19 10:15 /etc/nextron/securitycenter/model.config
 
-After the installation is finished, you will see the following message:
-
-.. figure:: ../images/setup_broker2.png
-   :alt: Installing a Broker
-
-You can now check if the service was installed successfully.
+If somehow the permissions and owner are incorrect, use the following commands
+to fix the issue:
 
 .. code-block:: console
-   
-   nextron@broker:~$ systemctl status asgard-broker.service
 
-You will see that the service is in a "**failed/exited**" state.
-This will change once we configured our ASGARD with the Broker.
+   nextron@security-center:~$ sudo chmod 600 /etc/nextron/securitycenter/model.config
+   nextron@security-center:~$ sudo chown securitycenter: /etc/nextron/securitycenter/model.config
 
-To configure your Broker in the ASGARD Management Center,
-we will continue later in the chapter :ref:`administration/configuration:Broker Configuration`.
+You can now restart the Security Center Frontend service:
+
+.. code-block:: console
+
+   nextron@security-center:~$ sudo systemctl restart securitycenter.service
+   nextron@security-center:~$ sudo systemctl status securitycenter.service
+
+If the status of the service is ``active (running)``, the installation is finished.
