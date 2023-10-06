@@ -115,3 +115,20 @@ You can now restart the Security Center Frontend service:
    nextron@security-center:~$ sudo systemctl status securitycenter.service
 
 If the status of the service is ``active (running)``, the installation is finished.
+
+You can log into the frontend via ``https://<FQDN>`` and into the backend via
+``https://<FQDN>:8443``.
+
+Product Updates
+---------------
+
+Neither the frontend nor the backend feature an update option through
+the web based GUI. In order to update both products login to each
+product and type:
+
+.. code-block:: console
+
+   nextron@security-center:~$ sudo apt update && sudo apt dist-upgrade
+
+.. note::
+   Make sure you always update both products at the same time
