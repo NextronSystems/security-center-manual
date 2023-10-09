@@ -46,9 +46,9 @@ Log into your Analysis Cockpit and navigate to ``Settings`` >
 ``Link`` > ``Security Center``. 
 
 .. figure:: ../images/first-steps_sc-connect-ac2.png
-   :alt: Security Center Connect Analysis Cockpit
+   :alt: Connect Analysis Cockpit
 
-   Security Center Connect Analysis Cockpit
+   Connect Analysis Cockpit
 
 The **Automatic Mode** will automatically flag all cases in your
 Security Center, which match the criteria from ``Case Types`` and

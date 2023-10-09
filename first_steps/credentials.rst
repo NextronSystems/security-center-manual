@@ -28,7 +28,7 @@ the second factor. You can do this by clicking your username in
 the top right corner and navigating to ``User Settings``.
 
 .. figure:: ../images/first-steps_sc-2fa.png
-   :alt: Security Center Use Settings
+   :alt: Security Center User Settings
 
    Security Center User Settings
 
