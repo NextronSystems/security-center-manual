@@ -1,6 +1,0 @@
-.. index:: Tenant
-
-Tenant
-======
-
-text
