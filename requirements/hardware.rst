@@ -13,7 +13,6 @@ The required hardware for your Security Center are as follows:
 
 .. list-table::
    :header-rows: 1
-   :widths: 24 36 36
 
    * - Endpoints
      - Frontend
