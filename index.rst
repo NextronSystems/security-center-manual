@@ -19,6 +19,7 @@ how to install the required components, and how to use it.
    setup/index
    first_steps/index
    usage/index
+   admin/index
    issues/index
 
 Index

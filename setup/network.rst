@@ -24,7 +24,7 @@ Network Configuration
 .. figure:: ../images/setup_network6.png
    :alt: Configure the network
 
-.. warning::
+.. danger::
    **Important:** Make sure that the combination of hostname and domain
    creates an FQDN that can be resolved from your Analysis Cockpit.
    Connection to ASGARD Analysis Cockpit will rely on the FQDN.

@@ -3,7 +3,7 @@
 Changing the IP-Address
 -----------------------
 
-You components IP Addresses can be changed in **/etc/network/interfaces**. The IP is configured with the address variable.
+You servers IP Addresses can be changed in **/etc/network/interfaces**. The IP is configured with the address variable.
 
 .. code-block:: console
 

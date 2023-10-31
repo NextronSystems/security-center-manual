@@ -3,7 +3,9 @@
 Connect your Analysis Cockpit
 =============================
 
-Some text
+In order to get data from your Analysis Cockpit into
+the Security Center, we need to connect both systems
+first. This can be done via the Web UI of both systems.
 
 Prepare your Security Center
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
