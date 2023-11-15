@@ -86,27 +86,31 @@ The Security Center is configured to retrieve updates from the following URLs:
 
 .. list-table:: 
    :header-rows: 1
-   :widths: 25, 15, 25, 35
+   :widths: 20, 15, 25, 40
 
    * - Description
      - Port
      - Source
      - Destination
-   * - Product and system updates
+   * - Product Updates
      - 443/tcp
-     - Gatekeeper, Lobby, Broker
+     - Security Center Frontend & Backend
      - update3.nextron-systems.com
+   * - Product Updates
+     - 443/tcp
+     - Security Center Frontend & Backend
+     - update-301.nextron-systems.com
    * - NTP
      - 123/udp
-     - Gatekeeper, Lobby, Broker
+     - Security Center Frontend & Backend
      - 0.debian.pool.ntp.org [1]_
    * - NTP
      - 123/udp
-     - Gatekeeper, Lobby, Broker
+     - Security Center Frontend & Backend
      - 1.debian.pool.ntp.org [1]_
    * - NTP
      - 123/udp
-     - Gatekeeper, Lobby, Broker
+     - Security Center Frontend & Backend
      - 2.debian.pool.ntp.org [1]_
 
 .. [1]
