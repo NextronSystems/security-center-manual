@@ -1,15 +1,45 @@
 .. index:: Upgrade your old Security Center
 
-Upgrade your old Security Center
-================================
+Upgrade your Security Center from v1 to v2
+==========================================
 
 In this chapter we will explain how to upgrade your
 Security Center v1 to the newest version. Since we
 mainly focus on the new Version 2 of the Security
-Center in this document, we want help you through
+Center in this document, we want to help you through
 the upgrade process from your older Version 1 of
 Security Center the newest one, so you can make use
 of the newest features.
+
+If you are running your Security Center Frontend and
+Backend on two separate servers, you will have to
+do the steps below for both servers. You can
+upgrade them at the same time to reduce downtime.
+
+New Update Servers
+~~~~~~~~~~~~~~~~~~
+
+We are using a new update server for the new versions
+of the Security Center. Please make sure the following
+server is reachable by both your Frontend and Backend
+server:
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 20, 15, 25, 40
+
+   * - Description
+     - Port
+     - Source
+     - Destination
+   * - Product Updates
+     - 443/tcp
+     - Security Center Frontend & Backend
+     - update-301.nextron-systems.com
+
+Please make sure your local firewall allows the connection
+to the new update server, otherwise the upgrade will not
+work.
 
 Preparing for the Upgrade
 ~~~~~~~~~~~~~~~~~~~~~~~~~
