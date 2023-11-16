@@ -10,4 +10,5 @@ continuing.
 .. toctree::
     :caption: Contents
 
+    updates
     upgrade
