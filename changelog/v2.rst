@@ -1,0 +1,37 @@
+.. Index:: Changelog v2
+
+Security Center v2
+==================
+
+This chapter contains all the changes made to
+the Security Center **Version 2**.
+
+Security Center 2.0.3
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Bugfix
+      - Fixed scroll to top when selecting dropdown items
+    * - Bugfix
+      - Fixed temporarily wrong 'call for action' indicator
+    * - Bugfix
+      - Fixed wrong table shown when clicking on some counts in the overview page
+
+Security Center 2.0.2
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Change
+      - Upgraded Debian from 10 to 12
+    * - Feature
+      - Support ASGARD Installer

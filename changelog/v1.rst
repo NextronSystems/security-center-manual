@@ -1,0 +1,146 @@
+.. Index:: Changelog v1
+
+Security Center v1
+==================
+
+This chapter contains all the changes made to
+the Security Center **Version 1**.
+
+Security Center 1.2.9
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Feature
+      - Differentiate between 'Open Findings' and 'All Findings'
+    * - Feature
+      - Differentiate between 'Priority Findings' and 'Informative Findings'
+    * - Feature
+      - Configure severity of findings per type and tenant
+    * - Feature
+      - Receive E-Mails for updates on findings and assets
+    * - Feature
+      - Added more change events to change history
+    * - Feature
+      - Support Aurora (requires Analysis Cockpit 3.8)
+    * - Feature
+      - Baselining count for THOR and Aurora events per asset (requires Analysis Cockpit 3.8, configurable)
+    * - Feature
+      - API keys (Backend only)
+    * - Feature
+      - API documentation (Backend only)
+    * - Change
+      - Refactored the UI
+    * - Change
+      - Wordings
+    * - Bugfix
+      - Fixed case with id 1 to be assigned to wrong finding
+    * - Bugfix
+      - Fixed some missing audit logs
+    * - Bugfix
+      - Fixed missing findings for assets that had no initial tenant assigned on first sync with Analysis Cockpit
+
+
+Security Center 1.1.1
+~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+    - This release refactored the architecture between tenant-based UI, administrative UI
+      and the servers. This also implies a full refactor of the API.
+    - If you have installed the Security Center and the Security Center Model
+      on same servers, you can upgrade those components without any implications
+    - If you have installed the Security Center and the Security Center Model
+      on different servers, the following things will change for you:
+      
+        1) The administrative UI is no more available from the Security Center server, the administrative UI
+           will be instead served on the Security Center Model server.
+        2) The administrative UI can no longer use the same https TLS certificate as the tenant-based UI,
+           you will have to generate a new certificate for the admin UI in the administrative UI settings section.
+        3) The license has to be re-imported in the administrative UI
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Feature
+      - All sections are now cross tenant.
+    * - Feature
+      - Added a new 'ASGARD Query' search bar to most tables to support more complex searches
+    * - Feature
+      - Added 'Change History' for assets and findings
+    * - Feature
+      - Added charts in overview page for assets/findings per status, assets per day, ...
+    * - Feature
+      - Automatically close all findings that are 'Legitimate Anomaly' or 'False Positive'
+    * - Feature
+      - Automatically delete and close findings on case deletion or if an asset has been removed from a case
+    * - Feature
+      - Light Mode
+    * - Feature
+      - Manage frontend TLS certificate and backend TLS certificate separately
+    * - Feature
+      - Create users that do not have to change their password
+    * - Change
+      - Moved administrative UI from the Security Center server to the Security Center Model server
+    * - Change
+      - Removed 'Call for Action' for findings in 'False Positive' or 'Legitimate Anomaly' state
+
+Security Center 1.0.4
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Bugfix
+      - Fixed non-working QR code for 2FA in enforced 2FA mode
+
+Security Center 1.0.3
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Bugfix
+      - Fixed hard coded limit of max. 40 tenants
+    * - Bugfix
+      - Fixed non-working QR code for 2FA
+
+Security Center 1.0.2
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Bugfix
+      - Fixed missing scroll bar for tenant selection
+    * - Bugfix
+      - Fixed logout
+    * - Bugfix
+      - Exclude backup directory from backup
+
+Security Center 1.0.1
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Security
+      - OS Security Fix
