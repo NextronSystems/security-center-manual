@@ -21,6 +21,7 @@ how to install the required components, and how to use it.
    usage/index
    admin/index
    issues/index
+   changelog/index
 
 Index
 =====
