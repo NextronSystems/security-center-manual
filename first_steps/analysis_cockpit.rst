@@ -69,4 +69,7 @@ Once you connected your Analysis Cockpit to your Security Center,
 you can find the status and some statistics in your Security Center
 in ``Settings`` > ``Analysis Cockpit``.
 
-MISSING IMAGE HERE!
+.. figure:: ../images/first-steps_sc-connect-ac3.png
+   :alt: Connected Analysis Cockpit
+
+   Connected Analysis Cockpit
