@@ -31,8 +31,6 @@ their communication relationships.
 .. figure:: ../images/security_center_architecture.png
    :alt: Architecture of Security Center
 
-   `Architecture of Security Center <../_images/security_center_architecture.png>`_
-
 In the figure above, the Security Center – which consists of the Security
 Center Frontend and the Security Center Backend – is shown as a single
 functional block. Security Center Frontend and Security Center Backend
