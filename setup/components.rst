@@ -4,131 +4,200 @@ Installing the Components
 =========================
 
 This chapter will explain how to install the Security Center components
-on your server(s). We recommend to start with the Backend, though the
-order in which you install your components is not important.
+on your server(s). We recommend to start with the Backend, since the
+Frontend installation requires the configuration of the Backend.
 
 Please keep in mind that you can install the Frontend and Backend on
 two separate servers. For simplicity, we chose to install both services
-on the same server.
+on the same server. If you wish to install the Frontend and Backend on
+two separate servers, please see :ref:`setup/components:installing two seperate servers`.
 
-If you also plan on installing both services on one server, make sure to
-remove the lock file and create a new motd-file after you installed your
-first service (Frontend or Backend). You can do this with the following
-commands:
+Install the ASGARD Security Center (All-in-one)
+-----------------------------------------------
 
-.. code-block:: console
+The Nextron Universal Installer is a web based installer
+which will guide you through the installation of our
+ASGARD products. The Nextron Universal Installer will install
+**one** of the following products on your server (this manual
+focuses on the ``ASGARD Security Center (All-in-one)``):
 
-   nextron@security-center:~$ sudo rm /var/lib/nextron/installer/done
-   nextron@security-center:~$ sudo touch /etc/update-motd.d/01-nextron-setup
+- ASGARD Management Center; alternatively if your license permits:
+  
+  * ASGARD Broker
+  * ASGARD Gatekeeper
+  * ASGARD Lobby
 
-.. warning:: 
-   For the next steps internet connectivity is required.
+- ASGARD Analysis Cockpit; alternatively:
+  
+  * Elasticsearch Cluster Node for ASGARD Analysis Cockpit
 
-Installing the Security Center Backend
---------------------------------------
+- ASGARD Security Center, in the following variants:
 
-After the base installation of your server is completed, we can install the
-backend application. To do this, connect to the server via SSH or use your
-hypervisor's web console, and run the following command:
+  * ASGARD Security Center (Backend Only)
+  * ASGARD Security Center (Frontend Only)
+  * ASGARD Security Center (All-in-one, unrecommended)
 
-.. code-block:: console
+.. note::
+   You can only install one product on one server, since the
+   products are not designed to coexist on the same server.
+   The exception being the ASGARD Security Center (All-in-one).
 
-   nextron@security-center:~$ sudo nextronInstaller -seccenter-backend
+The installation takes roughly between 5-15 minutes, depending
+on your internet connection and the server you are installing
+the product on.
 
-.. figure:: ../images/setup_sc-backend.png
-   :alt: Installing the Security Center Backend
+If you encounter problems during your installation, please see
+:ref:`setup/components:diagnostic pack` for further instructions.
 
-After the installation is done, you will see the following message:
+Requirements
+~~~~~~~~~~~~
 
-.. figure:: ../images/setup_sc-backend_done.png
-   :alt: Finished the Installation of Security Center Backend
+The installation of the ASGARD Management Center requires
+the following:
 
-You can now check if the service was installed successfully. 
+- A valid license file for the ASGARD Security Center
+- A configured FQDN (with some exceptions, see :ref:`setup/components:valid fqdn`)
+- Internet access during installation (see :ref:`setup/components:connectivity check`)
+- Every Server must have a valid and resolvable FQDN (see :ref:`setup/network:network configuration`)
+
+Installation
+~~~~~~~~~~~~
+
+After the ISO installer is finished with the setup,
+you will be greeted at the console login prompt with
+the following message:
+
+.. figure:: ../images/setup_nextronInstaller.png
+   :alt: Login prompt ASGARD Server
+
+Follow the instructions and navigate to the webpage
+displayed on your console. You will most likely get
+a browser warning when you connect the first time to
+the page. This is due to the page using a self signed
+certificate, since it will only be used to install the
+ASGARD Security Center. You can safely ignore this
+warning and proceed to the page.
+
+You will be greeted with a small introduction as to what
+the Nextron Universal Installer is and what it does. After
+you click ``Next``, you will be presented with the landing
+page of the Nextron Universal Installer.
+
+.. figure:: ../images/setup_nextronInstaller-landing.png
+   :alt: landing page of the Universal Installer
+
+Enter the Installation Code from the terminal and click
+``Next``. The Installer will now guide you through the
+installation.
+
+Connectivity Check
+~~~~~~~~~~~~~~~~~~
+
+The Nextron Universal Installer will try to connect to our
+update server in order to download all the necessary packages
+once the installation starts. Make sure you can reach the
+update servers (see :ref:`requirements/network:internet`).
+
+Please configure your proxy settings if you are behind a
+proxy (see :ref:`setup/components:proxy and ntp settings`).
+
+Valid FQDN
+~~~~~~~~~~
+
+The Nextron Universal Installer will prompt you to verify the
+FQDN which you configured during the installation of the base
+system (see :ref:`setup/network:network configuration`). This
+is needed in order for your ASGARD Components to communicate via
+a HTTPs connection with each other. If there is a mismatch of
+FQDNs your components will not be able to communicate with each
+other.
+
+If the displayed FQDN is not correct, you can change it by
+clicking on the ``View FQDN Change Instructions`` button.
+This will open a dialog with instructions on how to change
+the FQDN of your server. Once you have changed the FQDN,
+you can continue with the installation.
+
+.. figure:: ../images/setup_nextronInstaller-fqdn.png
+   :alt: FQDN Verification of the Universal Installer
+
+Proxy and NTP Settings
+~~~~~~~~~~~~~~~~~~~~~~
+
+If you need to configure a proxy or change the NTP settings
+of your system, you can do so by clicking on the ``Settings``
+button in the left menu of the Nextron Universal Installer.
+
+.. figure:: ../images/setup_nextronInstaller-settings.png
+   :alt: Settings of the Universal Installer
+
+If you configured a proxy during the ISO installation, those
+settings will be carried over into the Universal Installer.
+The settings will also be carried over into your ASGARD
+Security Center. The same goes for NTP.
+
+Diagnostic Pack
+~~~~~~~~~~~~~~~
+
+In case of errors or problems during the installation, you can
+download a diagnostic pack by navigating to the ``Diagnostics``
+tab in the left menu of the Nextron Universal Installer. Click
+on the ``Download Diagnostic Pack`` button to download the
+diagnostic pack. You can then send the diagnostic pack to our
+support team for further analysis.
+
+.. figure:: ../images/setup_nextronInstaller-diagnostics.png
+   :alt: Diagnostics of the Universal Installer
+
+Installing two seperate servers
+-------------------------------
+
+If you wish to separate the Frontend and Backend of the ASGARD
+Security Center, you can do so by installing the Backend on one
+server and the Frontend on another server. Simply choose one of
+the options during the ``Select Product`` stage of the Nextron
+Universal Installer.
+
+.. hint::
+   You have to start with the installation of the Backend, since
+   the Frontend needs the configuration of the Backend to work
+   properly.
+
+ASGARD Security Center (Backend Only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After the Nextron Universal Installer finished the installation of
+the ASGARD Security Center Backend, you have to download the configuration
+file from it (``model.config``). You can do this by connecting to the
+server via SSH. The file can be found in the following directory:
+
+``/etc/asgard-security-center-backend/model.config``
+
+You can now start with the installation of the Frontend.
+
+You can also check if the service of the Backend was installed successfully. 
 
 .. code-block:: console
    
-   nextron@gatekeeper:~$ systemctl status securitycenter-model.service
+   nextron@gatekeeper:~$ systemctl status asgard-security-center-backend.service
    
 The status of the service should be ``active (running)``.
 
-Installing the Security Center Frontend
----------------------------------------
+The Backend is running on TCP port 8443. You can now log into the Backend via
+``https://<FQDN>:8443``.
 
-After you have installed your Backend, we can install the frontend application.
-To do this, connect to the server via SSH or use your hypervisor's web console,
-and run the following command:
+ASGARD Security Center (Frontend Only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: console
-
-   nextron@security-center:~$ sudo nextronInstaller -seccenter-frontend
-
-.. figure:: ../images/setup_sc-frontend.png
-   :alt: Installing the Security Center Backend
-
-After the installation is done, you will see the following message:
-
-.. figure:: ../images/setup_sc-frontend_done.png
-   :alt: Finished the Installation of Security Center Backend
-
-You can now check if the service was installed successfully. 
-
-.. code-block:: console
-   
-   nextron@gatekeeper:~$ systemctl status securitycenter.service
-
-You will see that the service is in a ``failed/exited`` state. This will
-change once we configured our Frontend. To do this, we can copy the the configuration
-for our Backend into the directory of our Frontend.
-
-On a single system installation, run the following command:
+During the installation of the ASGARD Security Center Frontend, you will
+be prompted to upload the configuration file of the Backend. Use the file
+(``model.config``) you downloaded earlier from the Backend. Once the installation
+is finished, you can check if the service was installed successfully.
 
 .. code-block:: console
 
-   nextron@security-center:~$ sudo cp /etc/nextron/securitycenter-model/model.config /etc/nextron/securitycenter/model.config
-   nextron@security-center:~$ sudo chown securitycenter: /etc/nextron/securitycenter/model.config
-
-On a multi system installation, you have to copy the model.config file
-from one server to another. You can use the built in tools of linux to
-accomplish this.
-
-After the file has been copied, make sure that the permissions are
-correctly set:
-
-.. code-block:: console
-
-   nextron@security-center:~$ sudo ls -l /etc/nextron/securitycenter/model.config
-   -rw------- 1 securitycenter securitycenter 7587 Jul 19 10:15 /etc/nextron/securitycenter/model.config
-
-If somehow the permissions and owner are incorrect, use the following commands
-to fix the issue:
-
-.. code-block:: console
-
-   nextron@security-center:~$ sudo chmod 600 /etc/nextron/securitycenter/model.config
-   nextron@security-center:~$ sudo chown securitycenter: /etc/nextron/securitycenter/model.config
-
-You can now restart the Security Center Frontend service:
-
-.. code-block:: console
-
-   nextron@security-center:~$ sudo systemctl restart securitycenter.service
-   nextron@security-center:~$ sudo systemctl status securitycenter.service
+   nextron@security-center:~$ systemctl status asgard-security-center-frontend.service
 
 If the status of the service is ``active (running)``, the installation is finished.
 
-You can log into the frontend via ``https://<FQDN>`` and into the backend via
-``https://<FQDN>:8443``.
-
-Product Updates
----------------
-
-Neither the frontend nor the backend feature an update option through
-the web based GUI. In order to update both products login to each
-product and type:
-
-.. code-block:: console
-
-   nextron@security-center:~$ sudo apt update && sudo apt dist-upgrade
-
-.. note::
-   Make sure you always update both products at the same time
+You can now log into the frontend via ``https://<FQDN>``.
