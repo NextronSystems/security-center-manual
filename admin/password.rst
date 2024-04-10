@@ -9,7 +9,6 @@ command via console:
 .. code-block:: console
 
     nextron@sc-back:~$ sudo asgard-security-center-backend set-password
-    {"LEVEL":"Info","MESSAGE":"LDAP disabled","MODULE":"LDAP","TIME":"2024-04-10T08:17:42Z"}
     Please enter password for user `admin`: 
     Please re-enter password for user `admin`: 
-    Apr 10 08:17:49 sc-back THOR_UTIL: Info: SET_PASSWORD: password successfully updated
+    nextron@sc-back:~$
