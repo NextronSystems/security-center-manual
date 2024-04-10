@@ -1,23 +1,11 @@
 Password Reset
 ==============
 
-This chapter incluse console commands to reset the
-password for the admin user on both the Security Center
-Frontend and Backend
+Since the password for the admin user is stored only on the Backend,
+you have to reset the password via console. To reset the password for
+the ``admin`` user on the **Security Center Backend**, run the following
+command:
 
-Security Center Frontend
-------------------------
+.. code-block:: console
 
-In case you lost access to the ``admin`` user of your Security
-Center, you have to reset the password via console. To reset the
-password for the ``admin`` user on the **Security Center Frontend**,
-run the following command:
-
-.. code-block:: bash
-
-    nextron@asc-front:~$ sudo
-
-Security Center Backend
------------------------
-
-placeholder
+    nextron@asc-back:~$ sudo <placeholder>
