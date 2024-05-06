@@ -12,3 +12,4 @@ continuing.
 
     updates
     upgrade
+    password
