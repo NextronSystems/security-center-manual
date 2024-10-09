@@ -18,7 +18,7 @@ Security Center 2.1.2
     * - Security
       - OS Security Fix
 
-Security Center 2.1.2
+Security Center 2.1.1
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. list-table::
