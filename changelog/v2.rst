@@ -6,6 +6,42 @@ Security Center v2
 This chapter contains all the changes made to
 the Security Center **Version 2**.
 
+Security Center 2.1.2
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Security
+      - OS Security Fix
+
+Security Center 2.1.1
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Feature
+      - Bulk decommission assets
+    * - Feature
+      - New 'billing mode' to automatically generate billings per tenant
+    * - Feature
+      - Allow for 'short term engagements' on a per tenant basis (requires billing mode)
+    * - Feature
+      - Delete tenant with all data except some asset information
+    * - Security
+      - Fixed vulnerabilities in some dependencies
+    * - Bugfix
+      - Fixed wrong 'call for action' status on automated remediation detection
+    * - Bugfix
+      - Improved synchronization stability between AC and SC
+
 Security Center 2.0.3
 ~~~~~~~~~~~~~~~~~~~~~
 
