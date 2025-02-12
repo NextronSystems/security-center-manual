@@ -6,6 +6,50 @@ Security Center v2
 This chapter contains all the changes made to
 the Security Center **Version 2**.
 
+Security Center 2.2.0
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Highlight
+      - Added support for managing license plans on a per-tenant basis. Connected Management Centers now query the Security Center for asset and THOR licenses. Please note that anonymized statistics will be sent for billing purposes when using license plans.
+    * - Highlight
+      - Introduced PDF reports and scheduled reporting.
+    * - Feature
+      - Added the ability to download assets and findings as CSV files.
+    * - Feature
+      - Enabled downloading the Security Center Frontend configuration via the UI.
+    * - Improvement
+      - Introduced an option to select either "Mark as legitimate" or "Mark as legitimate and close" for findings.
+    * - Improvement
+      - Improved security by preventing API endpoint leaks and implementing a more secure password hash algorithm.
+    * - Improvement
+      - Decommissioned assets are now hidden by default in the affected assets list.
+    * - Improvement
+      - Certain finding types, such as 'Unknown', 'Legitimate Anomaly', and 'False Positive' are omitted in select boxes.
+    * - Improvement
+      - Disabled directory listing in the API for the /assets directory.
+    * - Improvement
+      - Progress for findings is now consistently displayed when all assets are deleted.
+    * - Improvement
+      - Users are redirected to the overview page after changing passwords or 2FA settings.
+    * - Improvement
+      - Password confirmation is required when changing 2FA settings.
+    * - Bugfix
+      - Fixed the height of overview bar charts with very low values.
+    * - Bugfix
+      - Corrected typos in the UI.
+    * - Bugfix
+      - Fixed non-functional table filter columns.
+    * - Bugfix
+      - Removed 'No Findings' from select boxes.
+    * - Bugfix
+      - Resolved logging issues with client IP addresses in the ASGARD Security Center Backend.
+
 Security Center 2.1.2
 ~~~~~~~~~~~~~~~~~~~~~
 
