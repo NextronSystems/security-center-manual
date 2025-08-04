@@ -2,7 +2,7 @@ import os
 
 project = 'ASGARD Security Center v2 Manual'
 version="2.0"
-copyright = '2023, Nextron Systems GmbH'
+copyright = '2025, Nextron Systems GmbH'
 author = 'Nextron Systems'
 extensions = [
     'sphinx.ext.autosectionlabel',
