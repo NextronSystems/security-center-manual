@@ -6,6 +6,18 @@ Security Center v2
 This chapter contains all the changes made to
 the Security Center **Version 2**.
 
+Security Center 2.2.1
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Bugfix
+      - Fixed stacked license plans returning the expire date of an already expired plan instead of the active plan.
+
 Security Center 2.2.0
 ~~~~~~~~~~~~~~~~~~~~~
 
