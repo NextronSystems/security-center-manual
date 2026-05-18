@@ -6,6 +6,18 @@ Security Center v2
 This chapter contains all the changes made to
 the Security Center **Version 2**.
 
+Security Center 2.2.2
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15, 85
+
+    * - Type
+      - Description
+    * - Security
+      - OS Security Fix
+
 Security Center 2.2.1
 ~~~~~~~~~~~~~~~~~~~~~
 
