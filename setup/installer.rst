@@ -3,12 +3,12 @@
 Navigate through the Installer
 ------------------------------
 
-The installation Process is started by clicking on ASGARD Graphical install.
+The installation Process is started by clicking on Graphical install.
 The installer then loads the additional components from the ISO and lets you select location and language.
 
 
 .. figure:: ../images/setup_iso_installer.png
-   :alt: ISO Installer - ASGARD
+   :alt: ISO Installer
 
 .. figure:: ../images/setup_language.png
    :alt: Select a language
@@ -27,5 +27,5 @@ The installer then loads the additional components from the ISO and lets you sel
 
 .. note::
    If DHCP is available, network parameters will be configured automatically.
-   Without DHCP, ASGARD drops into the manual network configuration dialogue.
+   Without DHCP, the installer drops into the manual network configuration dialogue.
    The IP address can be changed later, see :ref:`setup/configure_os:changing the ip-address`

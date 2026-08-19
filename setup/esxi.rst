@@ -11,7 +11,7 @@ please install a second server.
 Create a new VM with your virtualization software. In this case, we will use VMWare ESX managed through a VMWare VCenter.
 
 The new VM must be configured with a Linux base system and Debian GNU/Linux 12 (64 bits) as
-target version. It is recommended to upload the ASGARD ISO to an accessible data store
+target version. It is recommended to upload the ISO to an accessible data store
 and mount the same to your newly created VM. 
 
 .. figure:: ../images/setup_esx1.png

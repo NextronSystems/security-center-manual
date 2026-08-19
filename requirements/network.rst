@@ -3,7 +3,7 @@
 Network Requirements
 --------------------
 
-The ASGARD components use the ports in the following chapters.
+Our components use the ports in the following chapters.
 For a detailed and up to date list of our update and licensing
 servers, please visit https://www.nextron-systems.com/hosts/.
 
@@ -60,7 +60,7 @@ Analysis Cockpit
      - Destination
    * - Event and Asset synchronization
      - 6443/tcp
-     - ASGARD Analysis Cockpit
+     - Analysis Cockpit
      - Security Center Backend
 
 Security Center Frontend
@@ -117,7 +117,7 @@ The Security Center is configured to retrieve updates from the following URLs:
   The NTP server configuration can be changed.
 
 All proxy systems should be configured to allow access to these URLs without
-TLS/SSL interception (ASGARD uses client-side SSL certificates for authentication).
+TLS/SSL interception (we use client-side SSL certificates for authentication).
 It is possible to configure a proxy server, username and password during the setup
 process of the Security Center. Only BASIC authentication is supported (no NTLM
 authentication support).
