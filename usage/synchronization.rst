@@ -20,9 +20,9 @@ system version, IP addresses, hostname, local users (windows only)
 and installed software (windows only).
 
 An endpoint is assigned to a particular tenant based on
-the **label set in the ASGARD Management Center**. It is
+the **label set in the Management Center**. It is
 recommended to prepare custom agent installers for every tenant
-with a built-in label. Please see the ASGARD MC manual for details.
+with a built-in label. Please see the Management Center manual for details.
 This is to ensure an endpoint is automatically assigned to the
 correct tenant and human error cannot lead to an endpoint being
 assigned to the wrong customer. The mapping between tenant and label

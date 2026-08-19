@@ -39,7 +39,7 @@ You can always modify the labels for a tenant by clicking the
 .. hint::
    To automatically assign assets to the correct tenant,
    service providers can create a tenant specific agent installer
-   (on the ASGARD Management Center) with a preset and unique
+   (on the Management Center) with a preset and unique
    label for every tenant. This agent installer can be provieded
    to the specific tenant for installation.
 

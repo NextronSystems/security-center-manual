@@ -17,8 +17,8 @@ of your Security Center:
 
 .. code-block:: console
 
-    nextron@asgard-sc:~$ sudo apt update
-    nextron@asgard-sc:~$ sudo apt dist-upgrade
+    nextron@sec-center:~$ sudo apt update
+    nextron@sec-center:~$ sudo apt dist-upgrade
 
 After the updates have been installed, you can check
 if the services are up and running again. Make sure
@@ -29,8 +29,8 @@ Frontend:
 .. code-block:: console
     :emphasize-lines: 4
 
-    nextron@asgard-sc:~$ sudo systemctl status asgard-security-center-frontend.service 
-    ● asgard-security-center-frontend.service - ASGARD Security Center Frontend
+    nextron@sec-center:~$ sudo systemctl status asgard-security-center-frontend.service 
+    ● asgard-security-center-frontend.service - Security Center Frontend
          Loaded: loaded (/lib/systemd/system/asgard-security-center-frontend.service; enabled; preset: enabled)
          Active: active (running) since Thu 2023-11-16 12:42:47 CET; 38s ago
     [...]
@@ -40,8 +40,8 @@ Backend:
 .. code-block:: console
     :emphasize-lines: 4
 
-    nextron@asgard-sc:~$ sudo systemctl status asgard-security-center-backend.service 
-    ● asgard-security-center-backend.service - ASGARD Security Center Backend
+    nextron@sec-center:~$ sudo systemctl status asgard-security-center-backend.service 
+    ● asgard-security-center-backend.service - Security Center Backend
          Loaded: loaded (/lib/systemd/system/asgard-security-center-backend.service; enabled; preset: enabled)
          Active: active (running) since Thu 2023-11-16 12:42:47 CET; 31s ago                                                                                                                      
     [...]

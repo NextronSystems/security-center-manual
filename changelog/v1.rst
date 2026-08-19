@@ -71,7 +71,7 @@ Security Center 1.1.1
     * - Feature
       - All sections are now cross tenant.
     * - Feature
-      - Added a new 'ASGARD Query' search bar to most tables to support more complex searches
+      - Added a new 'AQL' search bar to most tables to support more complex searches
     * - Feature
       - Added 'Change History' for assets and findings
     * - Feature
