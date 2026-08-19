@@ -27,7 +27,7 @@ focuses on the ``Security Center (All-in-one)``):
   * Gatekeeper
   * Lobby
 
-- Master
+- Master Management Center
 
 - Analysis Cockpit; alternatively:
   
