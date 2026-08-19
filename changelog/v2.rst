@@ -72,7 +72,7 @@ Security Center 2.2.0
     * - Bugfix
       - Removed 'No Findings' from select boxes.
     * - Bugfix
-      - Resolved logging issues with client IP addresses in the ASGARD Security Center Backend.
+      - Resolved logging issues with client IP addresses in the Security Center Backend.
 
 Security Center 2.1.2
 ~~~~~~~~~~~~~~~~~~~~~
@@ -138,4 +138,4 @@ Security Center 2.0.2
     * - Change
       - Upgraded Debian from 10 to 12
     * - Feature
-      - Support ASGARD Installer
+      - Support Nextron Universal Installer

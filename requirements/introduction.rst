@@ -4,10 +4,10 @@ Introduction
 ============
 
 The Nextron Security Center is intended to provide multi tenancy support
-to single ASGARD installations. It connects to the Analysis Cockpit and
-synchronizes data provided in cases within the Analysis Cockpit.
+to single Management Center installations. It connects to the Analysis Cockpit
+and synchronizes data provided in cases within the Analysis Cockpit.
 
-All assets assigned to a specific tenant within the ASGARD Management
+All assets assigned to a specific tenant within the Management
 Center will be synchronized to this tenant in the Analysis Cockpit
 and finally to the Security Center.
 
@@ -31,8 +31,8 @@ their communication relationships.
 .. figure:: ../images/security_center_architecture.png
    :alt: Architecture of Security Center
 
-In the figure above, the Security Center – which consists of the Security
-Center Frontend and the Security Center Backend – is shown as a single
+In the figure above, the Security Center - which consists of the Security
+Center Frontend and the Security Center Backend - is shown as a single
 functional block. Security Center Frontend and Security Center Backend
 can be installed in separate DMZ networks if required. This is optional
 however.

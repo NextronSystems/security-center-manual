@@ -4,8 +4,8 @@ Welcome to Nextron's Security Center documentation!
 ===================================================
 
 The Nextron Security Center is intended to provide multi tenancy support
-to single ASGARD installations. It connects to the Analysis Cockpit and synchronizes
-data provided in cases within the Analysis Cockpit.
+to Management Center installations. It connects to the Analysis Cockpit
+and synchronizes data provided in cases within the Analysis Cockpit.
 
 In the following chapters we will describe how the Security Center works,
 how to install the required components, and how to use it.
@@ -20,7 +20,6 @@ how to install the required components, and how to use it.
    first_steps/index
    usage/index
    admin/index
-   issues/index
    changelog/index
 
 Index

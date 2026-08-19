@@ -62,7 +62,7 @@ current Security Center v1 to the newest version:
 
 .. code-block:: console
 
-    nextron@seccenter:~$ sudo apt update && sudo apt dist-upgrade
+    nextron@sec-center:~$ sudo apt update && sudo apt dist-upgrade
     [...]
     Do you want to continue? [Y/n] y
 
@@ -84,9 +84,9 @@ the update has finished.
 
 .. code-block:: console
 
-    nextron@seccenter:~$ start-asgard-update 
+    nextron@sec-center:~$ start-asgard-update 
     Created symlink /etc/systemd/system/multi-user.target.wants/asgard-updater.service → /lib/systemd/system/asgard-updater.service.
-    Successfully started the ASGARD update process.
+    Successfully started the update process.
     To monitor the update progress and view log files, you can use the following command:
     sudo tail -f /var/log/asgard-updater/update.log
 
@@ -104,7 +104,7 @@ message in the update log:
 
 .. code-block:: console
 
-    nextron@seccenter:~$ sudo tail /var/log/asgard-updater/update.log
+    nextron@sec-center:~$ sudo tail /var/log/asgard-updater/update.log
     [...]
     2023-10-31T08:57:14.834079+01:00 security-center asgard-updater[731]: Upgrade finished. Deactivating service...
     2023-10-31T08:57:14.843136+01:00 security-center asgard-updater[731]: Removed "/etc/systemd/system/multi-user.target.wants/asgard-updater.service".

@@ -12,37 +12,37 @@ two separate servers. For simplicity, we chose to install both services
 on the same server. If you wish to install the Frontend and Backend on
 two separate servers, please see :ref:`setup/components:installing two seperate servers`.
 
-Install the ASGARD Security Center (All-in-one)
------------------------------------------------
+Install the Security Center (All-in-one)
+----------------------------------------
 
 The Nextron Universal Installer is a web based installer
-which will guide you through the installation of our
-ASGARD products. The Nextron Universal Installer will install
+which will guide you through the installation of our products.
+The Nextron Universal Installer will install
 **one** of the following products on your server (this manual
-focuses on the ``ASGARD Security Center (All-in-one)``):
+focuses on the ``Security Center (All-in-one)``):
 
-- ASGARD Management Center; alternatively if your license permits:
+- Management Center; alternatively if your license permits:
   
-  * ASGARD Broker
-  * ASGARD Gatekeeper
-  * ASGARD Lobby
+  * Broker
+  * Gatekeeper
+  * Lobby
 
-- Master ASGARD
+- Master
 
-- ASGARD Analysis Cockpit; alternatively:
+- Analysis Cockpit; alternatively:
   
-  * Elasticsearch Cluster Node for ASGARD Analysis Cockpit
+  * Elasticsearch Cluster Node for Analysis Cockpit
 
-- ASGARD Security Center, in the following variants:
+- Security Center, in the following variants:
 
-  * ASGARD Security Center (Backend Only)
-  * ASGARD Security Center (Frontend Only)
-  * ASGARD Security Center (All-in-one, unrecommended)
+  * Security Center (Backend Only)
+  * Security Center (Frontend Only)
+  * Security Center (All-in-one, unrecommended)
 
 .. note::
    You can only install one product on one server, since the
    products are not designed to coexist on the same server.
-   The exception being the ASGARD Security Center (All-in-one).
+   The exception being the Security Center (All-in-one).
 
 The installation takes roughly between 5-15 minutes, depending
 on your internet connection and the server you are installing
@@ -54,10 +54,10 @@ If you encounter problems during your installation, please see
 Requirements
 ~~~~~~~~~~~~
 
-The installation of the ASGARD Management Center requires
+The installation of the Management Center requires
 the following:
 
-- A valid license file for the ASGARD Security Center
+- A valid license file for the Security Center
 - A configured FQDN (with some exceptions, see :ref:`setup/components:valid fqdn`)
 - Internet access during installation (see :ref:`setup/components:connectivity check`)
 - Every Server must have a valid and resolvable FQDN (see :ref:`setup/network:network configuration`)
@@ -70,14 +70,14 @@ you will be greeted at the console login prompt with
 the following message:
 
 .. figure:: ../images/setup_nextronInstaller.png
-   :alt: Login prompt ASGARD Server
+   :alt: Login prompt server
 
 Follow the instructions and navigate to the webpage
 displayed on your console. You will most likely get
 a browser warning when you connect the first time to
 the page. This is due to the page using a self signed
 certificate, since it will only be used to install the
-ASGARD Security Center. You can safely ignore this
+Security Center. You can safely ignore this
 warning and proceed to the page.
 
 You will be greeted with a small introduction as to what
@@ -109,7 +109,7 @@ Valid FQDN
 The Nextron Universal Installer will prompt you to verify the
 FQDN which you configured during the installation of the base
 system (see :ref:`setup/network:network configuration`). This
-is needed in order for your ASGARD Components to communicate via
+is needed in order for your components to communicate via
 a HTTPs connection with each other. If there is a mismatch of
 FQDNs your components will not be able to communicate with each
 other.
@@ -135,7 +135,7 @@ button in the left menu of the Nextron Universal Installer.
 
 If you configured a proxy during the ISO installation, those
 settings will be carried over into the Universal Installer.
-The settings will also be carried over into your ASGARD
+The settings will also be carried over into your
 Security Center. The same goes for NTP.
 
 Diagnostic Pack
@@ -154,7 +154,7 @@ support team for further analysis.
 Installing two seperate servers
 -------------------------------
 
-If you wish to separate the Frontend and Backend of the ASGARD
+If you wish to separate the Frontend and Backend of the
 Security Center, you can do so by installing the Backend on one
 server and the Frontend on another server. Simply choose one of
 the options during the ``Select Product`` stage of the Nextron
@@ -165,11 +165,11 @@ Universal Installer.
    the Frontend needs the configuration of the Backend to work
    properly.
 
-ASGARD Security Center (Backend Only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Security Center (Backend Only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After the Nextron Universal Installer finished the installation of
-the ASGARD Security Center Backend, you have to download the configuration
+the Security Center Backend, you have to download the configuration
 file from it (``model.config``). You can do this by connecting to the
 server via SSH. The file can be found in the following directory:
 
@@ -188,10 +188,10 @@ The status of the service should be ``active (running)``.
 The Backend is running on TCP port 8443. You can now log into the Backend via
 ``https://<FQDN>:8443``.
 
-ASGARD Security Center (Frontend Only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Security Center (Frontend Only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-During the installation of the ASGARD Security Center Frontend, you will
+During the installation of the Security Center Frontend, you will
 be prompted to upload the configuration file of the Backend. Use the file
 (``model.config``) you downloaded earlier from the Backend. Once the installation
 is finished, you can check if the service was installed successfully.
